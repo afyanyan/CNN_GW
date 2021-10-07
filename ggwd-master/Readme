@@ -1,4 +1,4 @@
-The privous code is for python2.7. Some codes needs to be converted to python 3.8
+##The privous code is for python2.7. Some codes needs to be converted to python 3.8
 
 1: generating_samples.py
 Line 69: sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
