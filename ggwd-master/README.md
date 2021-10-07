@@ -2,7 +2,7 @@ The privous code is for python2.7. Some codes needs to be converted to python 3.
 
 1: generating_samples.py
 
-Line 69: sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
+-Line 69: sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
 
 It can not run in python 3.7
 
@@ -13,7 +13,7 @@ sys.stdout = io.TextIOWrapper(open(sys.stdout.fileno(), 'wb', 0), write_through=
      
 2.utils/samplegeneration.py:
 
-Line 213:#        for key, value in waveform_params.iteritems():
+-Line 213:#        for key, value in waveform_params.iteritems():
 
 change:     
 
