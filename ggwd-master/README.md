@@ -1,30 +1,40 @@
-The privous code is for python2.7. Some codes needs to be converted to python 3.8
+## Generating the GW dataset
 
-1: generating_samples.py
+The scipts is cloned from https://github.com/timothygebhard/ggwd. The script is run in python2.7 and some changes needs to be made to run in python 3. 
+The scripts in this repo are converted to python 3 by applying the following changes:
 
--Line 69: sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
 
-It can not run in python 3.7
+**1: generating_samples.py**
 
-Change:
+Line 69: 
 
-sys.stdout = io.TextIOWrapper(open(sys.stdout.fileno(), 'wb', 0), write_through=True)
-       import io
+*sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)*
+
+->
+
+*import io*
+
+*sys.stdout = io.TextIOWrapper(open(sys.stdout.fileno(), 'wb', 0), write_through=True)*
+      
      
-2.utils/samplegeneration.py:
+**2.utils/samplegeneration.py**
 
--Line 213:#        for key, value in waveform_params.iteritems():
+Line 213:
 
-change:     
+*for key, value in waveform_params.iteritems():*
 
-for key, value in waveform_params.items():   
+->
 
-
-Run the code:
-
-python generate_sample.py --config-file=default.json
+*for key, value in waveform_params.items():*   
 
 
-plot the output
+**Run the code**
 
-python plot_sample.py --sample-id=0 --plot-path=./result.pdf
+*python generate_sample.py --config-file=default.json*
+
+
+**plot the output**
+
+*python plot_sample.py --sample-id=0 --plot-path=./result.pdf*
+
+this script needs to be debug
